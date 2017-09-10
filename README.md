@@ -22,7 +22,7 @@ pod 'EasyCreate'
 
 ## Author
 
-kkendall33, kyle.kendall@domo.com
+kkendall33, kkendall33@gmail.com
 
 ## License
 
