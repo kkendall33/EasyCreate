@@ -90,8 +90,13 @@ public extension StoryboardInstantiating where Self: UIViewController {
      - returns: `Self` This will be a `UIViewController` subclass generated from a `UIStoryboard`
      */
     public static func viewControllerFromStoryboard() -> Self {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle(for: Self.self) )
-        return storyboard.instantiateViewController(withIdentifier: viewControllerName) as! Self
+        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle(for: Self.self))
+        if let viewController = storyboard.instantiateInitialViewController() as? Self {
+            return viewController
+        } else if let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as? Self {
+            return viewController
+        }
+        fatalError("A viewcontroller with the identifier '\(viewControllerName)' does not exist on the storyboard with the name '\(storyboardName)'. Or it does exist and it does NOT match up with the type '\(type(of: self))'. AND… there is no initial view controller of the current type.")
     }
     
     public static var viewControllerName: String { return String(describing: Self.self) }

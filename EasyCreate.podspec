@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EasyCreate'
-  s.version          = '0.1.0'
-  s.summary          = 'Easy create helps you make stuff easily'
+  s.version          = '0.1.2'
+  s.summary          = 'Create UIView subclasses from .xib files easily.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This description should be cool. It helps you make stuff easily!
+Create UIView subclasses from .xib files easily. Also create UIViewController subclasses from Storyboards easily.
                        DESC
 
   s.homepage         = 'https://github.com/kkendall33/EasyCreate'
@@ -28,7 +28,7 @@ This description should be cool. It helps you make stuff easily!
   s.source           = { :git => 'https://github.com/kkendall33/EasyCreate.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'EasyCreate/Classes/**/*'
   
